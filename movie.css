@@ -1,316 +1,241 @@
-/* =========================================================
-   Reset & Tokens
-========================================================= */
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#0b0d13;
-  --panel:#121622;
-  --panel-2:#0f1320;
-  --text:#e8ecf1;
-  --muted:#a6b0bf;
-  --brand:#ffcc00;
-  --accent:#6aa9ff;
-  --danger:#ff5d6c;
-  --card-border:rgba(255,255,255,.08);
-  --glass:rgba(16,20,32,.7);
-  --shadow:0 10px 30px rgba(0,0,0,.35);
-  --radius:14px;
-}
-html,body{height:100%}
-html{scroll-behavior:smooth}
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(106,169,255,.15), transparent 60%),
-    radial-gradient(1000px 700px at 110% 10%, rgba(255,204,0,.08), transparent 50%),
-    var(--bg);
-  color:var(--text);
-  line-height:1.55;
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Optional full-bleed bg image (keeps your <div class="background-img">) */
-.background-img{
-  position:fixed;inset:0;z-index:-2;
-  background:url('./images/cover.jpg') center/cover no-repeat;
-  opacity:.15;filter:grayscale(30%);
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  line-height: 1.6;
 }
 
-/* =========================================================
-   Header
-========================================================= */
-header{
-  padding:42px 20px 16px;
-  text-align:center;
-}
-header h1{
-  font-size:clamp(28px,4vw,40px);
-  font-weight:800;
-  letter-spacing:.4px;
-  background:linear-gradient(92deg,#fff 0%,#ffe28a 45%,#9cc3ff 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  text-shadow:0 2px 20px rgba(255,255,255,.1);
+/* === HEADER === */
+header {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #ffcc00;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-/* =========================================================
-   Top Navigation (your <nav> structure preserved)
-========================================================= */
-nav{
-  position:sticky;top:0;z-index:50;
-  background:linear-gradient(180deg,rgba(8,10,18,.85),rgba(8,10,18,.65));
-  backdrop-filter:saturate(140%) blur(8px);
-  border-bottom:1px solid var(--card-border);
-  box-shadow:var(--shadow);
-}
-.nav-wrapper{
-  max-width:1150px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;
-  gap:12px;padding:12px 16px;
+/* === NAVBAR === */
+nav {
+  background: #222;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* “Menu” div exists in your HTML but no JS; we’ll style as a label/chip */
-.menu-button{
-  display:none; /* no JS toggle, so keep hidden */
-  color:var(--text);font-weight:700;
-  padding:8px 12px;border:1px solid var(--card-border);
-  border-radius:10px;background:var(--panel-2);
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
-/* the UL with class="navbar" */
-.navbar{
-  list-style:none;display:flex;align-items:center;gap:14px;
-  flex-wrap:wrap; /* allows wrapping on mid screens */
-  padding:0;margin:0;
-}
-.navbar > li{position:relative}
-
-/* links + .btn inside the list */
-.navbar a,
-.btn{
-  color:var(--text);text-decoration:none;
-  padding:8px 12px;border-radius:10px;
-  border:1px solid transparent;
-  transition:transform .18s ease, background-color .18s ease, border-color .18s ease, color .18s ease;
-  display:inline-flex;align-items:center;gap:8px;
-  font-weight:600;white-space:nowrap;
-}
-.navbar a:hover,
-.btn:hover{
-  background:rgba(255,255,255,.06);
-  border-color:var(--card-border);
-  transform:translateY(-1px);
+.navbar {
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
 
-/* Search */
-.search-container{
-  display:flex;align-items:center;gap:8px;
-  padding:6px 8px;border-radius:10px;background:var(--panel-2);
-  border:1px solid var(--card-border);
-}
-.search-container input{
-  all:unset;
-  width:220px;max-width:48vw;color:var(--text);
-  padding:6px 6px;border-radius:8px;
-}
-.search-container input::placeholder{color:var(--muted)}
-
-/* Auth links on the right */
-.auth-links{display:flex;align-items:center;gap:10px}
-.auth-links .btn{
-  background:linear-gradient(180deg,#1a2134,#121829);
-  border:1px solid var(--card-border);
-}
-.auth-links .btn:hover{
-  background:linear-gradient(180deg,#222b42,#161d30);
+.navbar li {
+  position: relative;
 }
 
-/* Details dropdowns (Category / Movies / IMDb / Review / Ratings) */
-details{position:relative}
-summary{
-  list-style:none;cursor:pointer;
-  padding:8px 12px;border-radius:10px;user-select:none;
-  border:1px solid transparent;
-}
-summary::-webkit-details-marker{display:none}
-details[open] > summary,
-summary:hover{
-  background:rgba(255,255,255,.06);
-  border-color:var(--card-border);
-}
-details > ul{
-  position:absolute;top:46px;left:0;min-width:220px;
-  background:var(--panel);border:1px solid var(--card-border);
-  border-radius:12px;padding:8px;margin:0;list-style:none;
-  box-shadow:var(--shadow);
-}
-details > ul li a{
-  display:block;padding:10px 12px;border-radius:8px;color:var(--text)
-}
-details > ul li a:hover{background:rgba(255,255,255,.06)}
-
-/* Prevent dropdowns from clipping on small space */
-@media (max-width: 860px){
-  .nav-wrapper{row-gap:10px}
-  .navbar{justify-content:center}
-  details > ul{position:static;margin-top:6px}
+.navbar a, summary {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-/* =========================================================
-   Sections & Headings
-========================================================= */
-section{padding:22px 16px}
-section h2{
-  font-size:clamp(22px,3vw,28px);
-  margin:10px auto 18px;
-  max-width:1150px;
-  color:#fff;
-  letter-spacing:.3px;
+.navbar a:hover, summary:hover {
+  color: #ffcc00;
 }
 
-/* Containers that wrap movie grids */
-.scroll-wrapper{max-width:1150px;margin:0 auto}
-.scroll-container{width:100%}
-
-/* =========================================================
-   Movie Cards Grid
-========================================================= */
-.movie-container{
-  max-width:1150px;margin:0 auto;
-  display:grid;gap:18px;
-  grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+/* Dropdown */
+details ul {
+  position: absolute;
+  background: #333;
+  padding: 10px;
+  border-radius: 8px;
+  list-style: none;
+  display: none;
 }
 
-/* movie-card is an <a> in your HTML */
-.movie-card{
-  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
-  border:1px solid var(--card-border);
-  border-radius:var(--radius);
-  overflow:hidden;text-decoration:none;color:inherit;
-  box-shadow:0 6px 18px rgba(0,0,0,.25);
-  transform:translateZ(0);
-  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-  display:flex;flex-direction:column;
-}
-.movie-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(255,204,0,.35);
-  box-shadow:0 12px 26px rgba(255,204,0,.15), 0 10px 26px rgba(0,0,0,.35);
-}
-.movie-card img{
-  width:100%;height:240px;object-fit:cover;display:block;
-  background:#0f131f;
-}
-.movie-info{
-  padding:12px 12px 14px;
-  display:flex;flex-direction:column;gap:6px;
-  background:linear-gradient(180deg,rgba(18,22,34,.95),rgba(14,18,28,.95));
-}
-.movie-info h3{
-  font-size:15px;line-height:1.25;color:#fff;font-weight:700;
-  text-overflow:ellipsis;white-space:nowrap;overflow:hidden;
-}
-.movie-info p{
-  font-size:13px;color:var(--muted)
+details[open] ul {
+  display: block;
 }
 
-/* View more */
-.view-more-container{margin-top:8px}
-.view-more-btn{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:10px 14px;border-radius:10px;
-  background:linear-gradient(180deg,#1a2134,#121829);
-  border:1px solid var(--card-border);color:var(--text);
-  text-decoration:none;font-weight:700;
-  transition:transform .16s ease, background .16s ease;
-}
-.view-more-btn:hover{transform:translateY(-2px);background:linear-gradient(180deg,#202844,#151b2e)}
-
-/* =========================================================
-   Modals (CSS-only via :target)
-========================================================= */
-.modal{
-  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
-  background:rgba(6,8,14,.65);backdrop-filter:blur(6px);
-  opacity:0;visibility:hidden;transition:opacity .18s ease, visibility .18s ease;
-  padding:20px;z-index:1000;
-}
-.modal:target{opacity:1;visibility:visible}
-.modal-content{
-  width:min(680px,92vw);
-  background:linear-gradient(180deg,rgba(22,28,44,.98),rgba(14,18,30,.98));
-  border:1px solid var(--card-border);
-  border-radius:16px;box-shadow:var(--shadow);
-  padding:22px 20px 18px;position:relative;color:var(--text)
-}
-.modal-content h2{
-  font-size:22px;margin-bottom:6px
-}
-.modal-content p{
-  font-size:15px;color:var(--muted)
-}
-.modal .close{
-  position:absolute;right:12px;top:10px;
-  width:34px;height:34px;border-radius:10px;
-  display:grid;place-items:center;text-decoration:none;
-  background:rgba(255,255,255,.06);
-  border:1px solid var(--card-border);color:#fff;font-size:22px;
-  transition:transform .16s ease, background .16s ease;
-}
-.modal .close:hover{transform:scale(1.06);background:rgba(255,255,255,.12)}
-
-/* =========================================================
-   Footer
-========================================================= */
-footer{
-  margin-top:16px;padding:18px 12px;text-align:center;
-  color:var(--muted);background:linear-gradient(180deg,rgba(10,12,18,.6),rgba(10,12,18,.85));
-  border-top:1px solid var(--card-border)
+details ul li {
+  padding: 5px 0;
 }
 
-/* =========================================================
-   Responsive
-========================================================= */
-
-/* ≥ 1280: slightly larger cards */
-@media (min-width:1280px){
-  .movie-container{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
-  .movie-card img{height:260px}
+.auth-links a {
+  margin-left: 10px;
+  background: #ffcc00;
+  color: black !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
-/* ≤ 992px: compact nav & grid */
-@media (max-width:992px){
-  .nav-wrapper{flex-wrap:wrap;justify-content:center}
-  .search-container input{width:180px}
-  .movie-container{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
-  .movie-card img{height:220px}
+.auth-links a:hover {
+  background: #e6b800;
 }
 
-/* ≤ 768px: center nav, stack nicely, make search full row */
-@media (max-width:768px){
-  .nav-wrapper{gap:10px}
-  .navbar{justify-content:center}
-  .search-container{order:3;width:100%;justify-content:center}
-  .search-container input{width:100%;max-width:560px}
-  .auth-links{order:2}
-  .movie-container{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
-  section{padding:18px 14px}
+/* === SEARCH BAR === */
+.search-container input {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
 }
 
-/* ≤ 576px: single column look, bigger tap targets */
-@media (max-width:576px){
-  header{padding:30px 14px 10px}
-  header h1{font-size:26px}
-  .nav-wrapper{padding:10px 12px}
-  .navbar{gap:10px}
-  .navbar a,.btn,summary{padding:9px 10px;border-radius:12px}
-  details > ul{border-radius:12px}
-  .search-container{padding:8px}
-  .movie-container{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  .movie-card img{height:200px}
+/* === MOVIE SECTIONS === */
+section {
+  padding: 40px 20px;
 }
 
-/* ≤ 420px: 1 column grid to avoid overflow */
-@media (max-width:420px){
-  .movie-container{grid-template-columns:1fr}
-  .movie-card img{height:220px}
-  .search-container input{max-width:100%}
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+/* === MOVIE CARDS WITH FLIP ANIMATION === */
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.movie-card {
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+  text-decoration: none;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  transition: transform 0.6s;
+}
+
+.movie-card:hover img {
+  transform: rotateY(180deg);
+}
+
+.movie-info {
+  margin-top: 8px;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+/* === VIEW MORE BUTTON === */
+.view-more-container {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.view-more-btn {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.view-more-btn:hover {
+  text-decoration: underline;
+}
+
+/* === MODALS === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.8);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal:target {
+  display: block;
+}
+
+.modal-content {
+  background: white;
+  margin: auto;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  animation: slideDown 0.6s ease;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  text-decoration: none;
+  color: #333;
+}
+
+.close:hover {
+  color: red;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideDown {
+  from {transform: translateY(-50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/* === FOOTER === */
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .nav-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .movie-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
