@@ -1,5 +1,4 @@
-    
-        /* General Reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +9,6 @@ body, html {
   font-family: Arial, sans-serif;
   scroll-behavior: smooth;
 }
-
 
 .hero {
   background: url('./images/cover.jpg') no-repeat center center/cover;
@@ -35,11 +33,16 @@ body, html {
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  color: #fff;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 20px;
 }
 
 .navbar nav a {
   color: white;
-  margin-left: 20px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -87,6 +90,7 @@ body, html {
   background-color: #e6b800;
 }
 
+/* Sections */
 .section {
   padding: 80px 20px;
   background-color: #f4f4f4;
@@ -96,11 +100,6 @@ body, html {
 .section h2 {
   margin-bottom: 15px;
   color: #333;
-}
-
-.section p, .section textarea, .section input {
-  font-size: 1rem;
-  margin-bottom: 10px;
 }
 
 .section form input,
@@ -123,59 +122,70 @@ body, html {
 .section form button:hover {
   background-color: #555;
 }
-@media (max-width: 780px) {
-.hero-content {
-    color:white;
-    background-color:green;
-    font-size: 1.6rem;
+
+/* 🔹 MOBILE RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-.hero {
-  background: url('./images/avengers.jpg') no-repeat center center/cover;
-  height: 100vh;
-  color: white;
-  position: relative;
-  z-index: 1;
+
+  .navbar nav {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar nav a {
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
 }
-}
+
 @media (max-width: 580px) {
   .hero-content {
-    color:orange;
+    color: orange;
     background-color: midnightblue;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+    padding: 10px;
   }
-  
-.hero {
-  background: url('./images/bg.jpg') no-repeat center center/cover;
-  height: 100vh;
-  color: white;
-  position: relative;
-  z-index: 1;
+
+  .hero {
+    background: url('./images/bg.jpg') no-repeat center center/cover;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
 }
 
-}
-
-footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-}
 @media (max-width: 480px) {
-  .hero-content {
-    color:orange;
-    background-color: midnightblue;
-    font-size: 1.6rem;
+  .hero {
+    background: url('./images/cover.jpg') no-repeat center center/cover;
   }
-  
-.hero {
-  background: url('./images/cover.jpg') no-repeat center center/cover;
-  height: 100vh;
-  color: white;
-  position: relative;
-  z-index: 1;
-}
 
+  .hero-content {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .hero-content form input[type="text"] {
+    width: 180px;
+  }
 }
 
 footer {
