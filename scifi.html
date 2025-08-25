@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comedy Movies</title>
+<style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fefefe;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.title {
+  text-align: center;
+  color: #e67e22;
+  margin-bottom: 40px;
+  font-size: 36px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  text-align: center;
+  padding: 15px;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.movie-card h3 {
+  margin-top: 15px;
+  color: #2c3e50;
+}
+
+.movie-card p {
+  color: #7f8c8d;
+  font-size: 14px;
+}
+/* Extra small devices (phones < 400px) */
+@media (max-width: 400px) {
+  .movie-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .movie-card h3 {
+    font-size: 1rem;
+  }
+  .movie-card p {
+    font-size: 12px;
+  }
+}
+
+/* Small devices (401px - 600px) */
+@media (min-width: 401px) and (max-width: 600px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .movie-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Medium devices (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .title {
+    font-size: 2.4rem;
+  }
+}
+
+/* Large devices (901px - 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .title {
+    font-size: 2.8rem;
+  }
+}
+
+/* Extra large screens (1201px+) */
+@media (min-width: 1201px) {
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .title {
+    font-size: 3rem;
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="title">🎬 Sci-fi Movies</h1>
+    <div class="movie-grid">
+
+      <div class="movie-card">
+        <img src="./images/kalki.jpg" alt="kalki">
+        <h3>kalki</h3>
+        <p>Fun-filled adventure and laughter guaranteed!</p>
+      </div>
+
+      <div class="movie-card">
+        <img src=".images/raone.jpg" alt="raone">
+        <h3>Raone</h3>
+        <p>A hilarious story about friendship and chaos.</p>
+      </div>
+
+      <div class="movie-card">
+        <img src="./images/manad.jpg" alt="Mannadu">
+        <h3>Mannadu</h3>
+        <p>Laugh-out-loud comedy with a twist.</p>
+      </div>
+
+      <div class="movie-card">
+        <img src="./images/edge.jpg" alt="Edge of Tomorrow">
+        <h3>Edge of Tomorrow</h3>
+        <p>Get ready for non-stop laughter!</p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Recommendations</title>
+  <link rel="stylesheet" href="movie.css">
+  
+</head>
+<body>
+      <div class="background-img"></div>
+
+  <header>
+    <h1>🎬 Movie Recommendations</h1>
+  </header>
+<nav>
+  <div class="nav-wrapper">
+    <div class="menu-button">
+  ☰ Menu
+</div>
+
+
+    <ul class="navbar">
+      <div class="search-container">
+  <input type="text" id="movieSearch" placeholder="Search the following movies..." onkeyup="filterMovies()" />
+</div>
+
+
+
+      
+      <li>
+      <a href="cinema.html"class="btn">Home</a>
+
+      <li>
+        <details>
+          <summary>Category</summary>
+          <ul class=>
+            <li><a href="#tamil">Tamil Movies</a></li>
+            <li><a href="#english">English Movies</a></li>
+            <li><a href="#malayalam">Malayalam Movies</a></li>
+            <li><a href="#telugu">Telugu Movies</a></li>
+            <li><a href="#hindi">Hindi Movies</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <details>
+          <summary>Movies</summary>
+          <ul>
+            <li> <a href="horror.html"class="btn">Horror</a></li>  
+            <li><a href="com.html"class="btn">Commedy</a></li>
+            <li><a href="scifi.html"class="btn">Sci-Fi</a></li>
+            <li><a href="actions.html" class="btn">Action</a></li>
+            <li><a href="suspense.html">Suspense</a></li>
+            <li><a href="drama.html">Drama</a></li>
+            <li><a href="Romance.html"> Romance</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <details>
+          <summary>IMDb</summary>
+          <ul>
+            <li><a href="4star.html">4 Star</a></li>
+            <li><a href="5star.html">5 Star</a></li>
+            <li><a href="6star.html">6 Star</a></li>
+            <li><a href="7star.html">7 Star</a></li>
+            <li><a href="8star.html">8 Star</a></li>
+            <li><a href="above8star.html">Above 8 Star</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <details>
+          <summary>Review</summary>
+          <ul>
+            <li><a href="flop.html">Flop</a></li>
+            <li><a href="average.html">Average</a></li>
+            <li><a href="hit.html">Hit</a></li>
+            <li><a href="superhit.html">Super Hit</a></li>
+            <li><a href="blockbuster.html">Blockbuster</a></li>
+            <li><a href="industryhit.html">Industry Hit</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <details>
+          <summary>Ratings</summary>
+          <ul>
+            <li><a href="1out5.html">1 out of 5</a></li>
+            <li><a href="2out5.html">2 out of 5</a></li>
+            <li><a href="3out5.html">3 out of 5</a></li>
+            <li><a href="4out5.html">4 out of 5</a></li>
+            <li><a href="5out5.html">5 out of 5</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+
+    <div class="auth-links">
+    <a href="login.html" class="btn">Login</a>
+    <a href="login.html"class="btn">signup</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- English Movies -->
+<section id="english">
+  <h2 style="text-align: center;">English Movies</h2>
+    <div class="scroll-wrapper">
+    <div class="scroll-container">
+    <div class="movie-container">
+    
+
+  <a href="#inception" class="movie-card">
+    <img src="./images/inception.jpeg" alt="Inception">
+    <div class="movie-info">
+      <h3>Inception</h3>
+      <p>⭐ 8.8 | Sci-Fi</p>
+    </div>
+    
+  </a>
+
+  <a href="#Godfather" class="movie-card">
+    <img src="./images/gf.jpg" alt="tgf">
+    <div class="movie-info">
+      <h3>The God Father</h3>
+      <p>⭐ 9.2 | Action</p>
+    </div>
+  </a>
+
+  <a href="#intersteller" class="movie-card">
+    <img src="./images/intersteller.jpg" alt="intersteller">
+    <div class="movie-info">
+      <h3>Intersteller</h3>
+      <p>⭐ 8.7 | Sci-fi</p>
+    </div>
+     <a href="#Avenger" class="movie-card">
+    <img src="./images/avengers.jpg" alt="avengers">
+    <div class="movie-info">
+      <h3>Avengers EndGame</h3>
+      <p>⭐ 8.4 |Action&Sci-fi</p>
+    </div>
+     <a href="#Joker" class="movie-card">
+    <img src="./images/joker.jpg" alt="joker">
+    <div class="movie-info">
+      <h3>Joker</h3>
+      <p>⭐ 8.3 | Thriller</p>
+    </div>
+     <div class="view-more-container" >
+  <a href="#more-[category]" class="view-more-btn">View More →</a>
+</div>
+
+
+  </a>
+</div>
+</div>
+    </div>
+
+
+</section>
+
+<!-- Tamil Movies -->
+ <section id="tamil">
+   
+  <h2 style="text-align: center;">Tamil Movies</h2>
+  <!-- <div class="scroll-wrapper">
+    <div class="scroll-container"> -->
+  <div class="movie-container">
+    <!-- Example Tamil movie -->
+    <a href="#tamilmovie1" class="movie-card">
+     <img src="./images/vikram2.jpg" alt="Vikram">
+      <div class="movie-info">
+        <h3>Vikram</h3>
+        <p>⭐ 8.3 | Action&Thriller</p>
+      </div>
+      
+    </a>
+     <a href="#tamilmovie1" class="movie-card">
+      <img src="./images/2.0.jpg" alt="2.0">
+      <div class="movie-info">
+        <h3>2.0</h3>
+        <p>⭐ 7 | Sci-Fi</p>
+      </div>
+    <a href="#tamilmovie1" class="movie-card">
+        <img src="./images/leo.jpg" alt="Leo">
+      <div class="movie-info">
+        <h3>Leo</h3>
+        <p>⭐ 7.2 | Action</p>
+      </div>
+    </a>
+      <a href="#tamilmovie1" class="movie-card">
+       <img src="./images/jailer.jpg" alt="Jailer">
+      <div class="movie-info">
+        <h3>Jailer</h3>
+        <p>⭐ 7.1 | Action</p>
+      </div>
+      </a>
+        <a href="#tamilmovie1" class="movie-card">
+    <img src="./images/goat.jpg" alt="Greatest Of All Time">
+      <div class="movie-info">
+        <h3>Greatest Of All Time</h3>
+        <p>⭐ 6 | Action &Thriller</p>
+      </div>
+       <div class="view-more-container">
+  <a href="#more-[category]" class="view-more-btn">View More →</a>
+</div>
+
+
+    </a>
+    </div>
+  <!-- </div>
+  </div> -->
+</section>
+
+<!-- Hindi Movies -->
+<section id="hindi">
+
+  <h2 style="text-align: center;">Hindi Movies</h2>
+  <div class="scroll-wrapper">
+    <div class="scroll-container">
+  <div class="movie-container">
+  <a href="#idiots" class="movie-card">
+    <img src="./images/idiot.jpg" alt="3 Idiots">
+    <div class="movie-info">
+      <h3>3 Idiots</h3>
+      <p>⭐ 8.4 | Drama</p>
+    </div>
+    <a href="#dangal" class="movie-card">
+    <img src="./images/dangal.jpg" alt="Dangal">
+    <div class="movie-info">
+      <h3>Dangal</h3>
+      <p>⭐ 8.3 |Comedy</p>
+    </div>
+    <a href="12 Fail" class="movie-card">
+    <img src="./images/12 fail.jpg" alt="12 Fail">
+    <div class="movie-info">
+      <h3>12 Fail</h3>
+      <p>⭐ 8.7 | Drama</p>
+    </div>
+     <a href="#Lagaan" class="movie-card">
+    <img src="./images/lagaan.jpg" alt="Lagaan">
+    <div class="movie-info">
+      <h3>Lagaan</h3>
+      <p>⭐ 8.1 |Drama</p>
+    </div>
+     <a href="#Rocketry" class="movie-card">
+    <img src="./images/rocketry.jpg" alt="Rocketry">
+    <div class="movie-info">
+      <h3>Rocketry</h3>
+      <p>⭐ 8.6 |Sci-fi</p>
+    </div>
+
+     <div class="view-more-container">
+  <a href="#more-[category]" class="view-more-btn">View More →</a>
+</div>
+
+  </a>
+</div>
+    </div>
+    </div>
+
+</section>
+
+<!-- Telugu Movies -->
+<section id="telugu">
+  <h2 style="text-align: center;">Telugu Movies</h2>
+  <!-- <div class="scroll-wrapper">
+    <div class="scroll-container"> -->
+  <div class="movie-container">
+
+<section class="movie-container">
+  <a href="#rrr" class="movie-card">
+    <img src="./images/RRR.jpg" alt="RRR">
+    <div class="movie-info">
+      <h3>RRR</h3>
+      <p>⭐ 7.8 | Action</p>
+    </div>
+     <a href="#bahubali" class="movie-card">
+    <img src="./images/bahubali 2.jpg" alt="bahubali 1">
+    <div class="movie-info">
+      <h3>bahubali 1</h3>
+      <p>⭐ 8 |  Action&Drama</p>
+    </div>
+    <a href="#bahubali 2" class="movie-card">
+    <img src="./images/bahubali 2.jpg" alt="bahubali 2">
+    <div class="movie-info">
+      <h3>bahubali 2</h3>
+      <p>⭐ 8.2 |Action&Drama</p>
+    </div>
+    <a href="#Magadheera" class="movie-card">
+    <img src="./images/maghadeera.jpg" alt="Magadheera">
+    <div class="movie-info">
+      <h3>Magadheera</h3>
+      <p>⭐ 7.7 |Action&Drama</p>
+    </div>
+     <a href="#Sita Ramam " class="movie-card">
+    <img src="./images/sita ramamam.jpg" alt="Sita Ramam ">
+    <div class="movie-info">
+      <h3>Sita Ramam </h3>
+      <p>⭐ 8.5 |Romance</p>
+    </div>
+     <div class="view-more-container">
+  <a href="#more-[category]" class="view-more-btn">View More →</a>
+</div>
+
+  </a>
+</div>
+<!-- </div>
+</div> -->
+
+</section>
+
+<!-- Malayalam Movies -->
+ <section id="malayalam">
+  <h2 style="text-align: center;">Malayalam Movies</h2>
+  <div class="scroll-wrapper">
+    <div class="scroll-container">
+  <div class="movie-container">
+
+  <a href="#drishyam" class="movie-card">
+    <img src="./images/drish.jpg" alt="Drishyam">
+    <div class="movie-info">
+      <h3>Drishyam</h3>
+      <p>⭐ 8.4 | Thriller</p>
+    </div>
+  <a href="# Kishkindha Kaandam " class="movie-card">
+    <img src="./images/kiskindha kandam.jpg" alt=" Kishkindha Kaandam ">
+    <div class="movie-info">
+      <h3> Kishkindha Kaandam </h3>
+      <p>⭐ 8 | suspanse</p>
+    </div>
+    <a href="#Aattam  " class="movie-card">
+    <img src="./images/aattam.jpg" alt=" Aattam ">
+    <div class="movie-info">
+      <h3> Aattam  </h3>
+      <p>⭐ 8.2 |Dramae</p>
+    </div>
+    <a href="#Manjummel Boys " class="movie-card">
+    <img src="./images/manjummel boys.jpg" alt="Manjummel Boys">
+    <div class="movie-info">
+      <h3>Manjummel Boys </h3>
+      <p>⭐ 8.2 | Thriller&Drama</p>
+    </div>
+        <a href="#premalu " class="movie-card">
+    <img src="./images/premalu.jpg" alt="premalu">
+    <div class="movie-info">
+      <h3>premalu </h3>
+      <p>⭐ 7.8 | Romance</p>
+    </div>
+    
+     <div class="view-more-container">
+  <a href="#more-[category]" class="view-more-btn">View More →</a>
+</div>
+
+  </a>
+  </div>
+  </div>
+  </div>
+    
+</section>
+<!-- Place this in your HTML file -->
+
+<!-- MODAL FIXES & NEW MODALS -->
+<!-- Modal: Inception -->
+<div id="inception" class="modal">
+  <div class="modal-content">
+     
+    <a href="#" class="close">&times;</a>
+    <h2>Inception</h2>
+    <p>A mind-bending sci-fi thriller directed by Christopher Nolan.</p>
+  </div>
+</div>
+
+
+
+<!-- Modal: The Godfather -->
+<div id="Godfather" class="modal">
+  <div class="modal-content">
+    <a href="#" class="close">&times;</a>
+    <h2>The Godfather</h2>
+    <p>An epic tale of a mafia family led by Vito Corleone. A cinematic masterpiece.</p>
+  </div>
+</div>
+
+<!-- Modal: Interstellar -->
+<div id="intersteller" class="modal">
+  <div class="modal-content">
+    
+    <a href="#" class="close">&times;</a>
+    <h2>Interstellar</h2>
+    <p>A space exploration drama about love, time, and black holes by Christopher Nolan.</p>
+  </div>
+</div>
+
+
+<!-- Modal: Vikram -->
+<div id="vikram" class="modal">
+  <div class="modal-content">
+     <a href="#" class="close">&times;</a>
+    <h2>Vikram</h2>
+    <p>Action thriller starring Kamal Haasan and Vijay Sethupathi.</p>
+  </div>
+</div>
+<!-- Modal: RRR -->
+<div id="rrr" class="modal">
+  <div class="modal-content">
+    <a href="#" class="close">&times;</a>
+    <h2>RRR</h2>
+    <p>Epic action-drama directed by S.S. Rajamouli.</p>
+  </div>
+</div>
+<!-- Modal: 3 Idiots -->
+<div id="idiots" class="modal">
+  <div class="modal-content">
+    <a href="#" class="close">&times;</a>
+    <h2>3 Idiots</h2>
+    <p>A fun and emotional journey through college life, friendship, and following your passion.</p>
+  </div>
+</div>
+<!-- Modal: Drishyam -->
+<div id="drishyam" class="modal">
+  <div class="modal-content">
+    <a href="#" class="close">&times;</a>
+    <h2>Drishyam</h2>
+    <p>A gripping thriller about a man who will do anything to protect his family.</p>
+  </div>
+</div>
+  <footer>
+    <p>&copy; 2025 Movie Recommender</p>
+  </footer>
+  
+
+</body>
+</html>

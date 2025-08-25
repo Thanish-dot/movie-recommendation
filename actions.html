@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horror Movie Recommendations</title>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  background: #0d0d0d;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #ff0000;
+  text-shadow: 0 0 10px #ff0000;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.movie-card {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #330000;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff0000;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.movie-card h2 {
+  margin: 10px 0 5px;
+  font-size: 1.3rem;
+  color: #ff4444;
+}
+
+.movie-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+/* Extra small devices (phones < 400px) */
+@media (max-width: 400px) {
+  .container {
+    padding: 20px 10px;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .movie-card h2 {
+    font-size: 1.1rem;
+  }
+  .movie-card p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Small devices (401px - 600px) */
+@media (min-width: 401px) and (max-width: 600px) {
+  .container {
+    padding: 30px 15px;
+  }
+  .title {
+    font-size: 2.4rem;
+  }
+  .movie-card h2 {
+    font-size: 1.2rem;
+  }
+  .movie-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Medium devices (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .movies {
+    gap: 20px;
+  }
+  .movie-card h2 {
+    font-size: 1.25rem;
+  }
+  .movie-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large devices (901px - 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .movies {
+    gap: 25px;
+  }
+  .title {
+    font-size: 2.6rem;
+  }
+}
+
+/* Extra large screens (1201px+) */
+@media (min-width: 1201px) {
+  .movies {
+    gap: 30px;
+  }
+  .title {
+    font-size: 2.8rem;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">ACTION MOVIE</h1>
+
+    <div class="movies">
+      <div class="movie-card">
+        <img src="./images/jw.jpg" alt="john wick">
+        <h2>john wick</h2>
+        <p>Paranormal investigators help a family terrorized by a dark presence.</p>
+      </div>
+
+      <div class="movie-card">
+        <img src="./images/to.jpg" alt="Thani oruvan">
+        <h2>Thani oruvan</h2>
+        <p>A family looks to prevent evil spirits from trapping their comatose child.</p>
+      </div>
+
+      <div class="movie-card">
+        <img src="./images/ro" alt="Robinhood">
+        <h2>Robinhood</h2>
+        <p>A vintage doll brings supernatural horror into a young couple’s home.</p>
+      </div>
+
+      <div class="movie-card">
+        <img src="./images/jawan.jpg" alt="jawan">
+        <h2>jawan</h2>
+        <p>A priest and novice confront a demonic force in a Romanian abbey.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

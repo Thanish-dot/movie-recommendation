@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f2f5;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 350px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background: #45a049;
+}
+
+.form-container p {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+}
+
+.form-container a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+/* Extra small devices (phones < 400px) */
+@media (max-width: 400px) {
+  .container {
+    padding: 10px;
+  }
+  .form-container {
+    width: 95%;
+    padding: 15px;
+  }
+  .form-container h2 {
+    font-size: 1.5rem;
+  }
+  .form-container label,
+  .form-container input,
+  .form-container button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small devices (401px - 600px) */
+@media (min-width: 401px) and (max-width: 600px) {
+  .form-container {
+    width: 80%;
+    padding: 20px;
+  }
+  .form-container h2 {
+    font-size: 1.7rem;
+  }
+  .form-container label,
+  .form-container input,
+  .form-container button {
+    font-size: 1rem;
+  }
+}
+
+/* Medium devices (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .form-container {
+    width: 60%;
+  }
+}
+
+/* Large devices (901px - 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .form-container {
+    width: 40%;
+  }
+}
+
+/* Extra large screens (1201px+) */
+@media (min-width: 1201px) {
+  .form-container {
+    width: 30%;
+  }
+}
+

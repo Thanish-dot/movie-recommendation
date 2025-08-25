@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Star Movies</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;padding:0;background:#111;color:#fff;}
+header{background:#1a1a1a;padding:20px;text-align:center;}
+header h1{margin:0;font-size:2rem;color:#3498db;}
+.container{display:flex;flex-wrap:wrap;gap:20px;padding:20px;justify-content:center;}
+.movie-card{background:#222;border-radius:10px;width:180px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.5);transition:transform 0.2s;}
+.movie-card:hover{transform:translateY(-5px);}
+.movie-card img{width:100%;height:250px;object-fit:cover;border-radius:8px;}
+.movie-card h3{margin:10px 0;font-size:1rem;color:#f1c40f;}
+.language{text-align:center;margin-top:5px;font-size:0.85rem;color:#ccc;}
+.rating{margin-top:5px;font-size:0.85rem;color:#3498db;font-weight:bold;}
+@media (max-width:600px){.movie-card{width:45%;}}
+</style>
+</head>
+<body>
+<header><h1>5 Star Movies</h1></header>
+<div class="container">
+<div class="movie-card"><img src="images/manad.jpg" alt=""><h3>Movie 1</h3><div class="language">Tamil</div><div class="rating">★★★★★</div></div>
+<div class="movie-card"><img src="images/joker.jpg" alt=""><h3>Movie 2</h3><div class="language">English</div><div class="rating">★★★★★</div></div>
+<div class="movie-card"><img src="images/kalki.jpg" alt=""><h3>Movie 3</h3><div class="language">Hindi</div><div class="rating">★★★★★</div></div>
+<div class="movie-card"><img src="images/manjummel boys.jpg" alt=""><h3>Movie 4</h3><div class="language">Malayalam</div><div class="rating">★★★★★</div></div>
+<div class="movie-card"><img src="images/bahubali 2.jpg" alt=""><h3>Movie 5</h3><div class="language">Telugu</div><div class="rating">★★★★★</div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Hit Movies</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;padding:0;background:#111;color:#fff;}
+header{background:#1a1a1a;padding:20px;text-align:center;}
+header h1{margin:0;font-size:2rem;color:#9b59b6;}
+.container{display:flex;flex-wrap:wrap;gap:20px;padding:20px;justify-content:center;}
+.movie-card{background:#222;border-radius:10px;width:180px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.5);transition:transform 0.2s;}
+.movie-card:hover{transform:translateY(-5px);}
+.movie-card img{width:100%;height:250px;object-fit:cover;border-radius:8px;}
+.movie-card h3{margin:10px 0;font-size:1rem;color:#f1c40f;}
+.language{text-align:center;margin-top:5px;font-size:0.85rem;color:#ccc;}
+.review{margin-top:5px;font-size:0.85rem;color:#f39c12;font-weight:bold;}
+@media (max-width:600px){.movie-card{width:45%;}}
+/* Extra small devices (phones < 400px) */
+@media (max-width: 400px) {
+  .movie-card {
+    width: 100%;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .language, .review {
+    font-size: 0.75rem;
+  }
+}
+
+/* Small devices (401px - 600px) */
+@media (min-width: 401px) and (max-width: 600px) {
+  .movie-card {
+    width: 48%;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Medium devices (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .movie-card {
+    width: 30%;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Large devices (901px - 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .movie-card {
+    width: 22%;
+  }
+  header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Extra large devices (1201px+) */
+@media (min-width: 1201px) {
+  .movie-card {
+    width: 18%;
+  }
+  header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+</style>
+</head>
+<body>
+<header><h1>Super Hit Movies</h1></header>
+<div class="container">
+<div class="movie-card"><img src="images/12 fail.jpg" alt=""><h3>Movie 1</h3><div class="language">Tamil</div><div class="review">Super Hit</div></div>
+<div class="movie-card"><img src="images/lagaan.jpg" alt=""><h3>Movie 2</h3><div class="language">English</div><div class="review">Super Hit</div></div>
+<div class="movie-card"><img src="images/jailer.jpg" alt=""><h3>Movie 3</h3><div class="language">Hindi</div><div class="review">Super Hit</div></div>
+<div class="movie-card"><img src="images/rocketry.jpg" alt=""><h3>Movie 4</h3><div class="language">Malayalam</div><div class="review">Super Hit</div></div>
+<div class="movie-card"><img src="images/2.0" alt=""><h3>Movie 5</h3><div class="language">Telugu</div><div class="review">Super Hit</div></div>
+</div>
+</body>
+</html>
