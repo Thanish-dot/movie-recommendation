@@ -8,42 +8,40 @@
 body, html {
   font-family: Arial, sans-serif;
   scroll-behavior: smooth;
+  background-color: #1a1a1a;
 }
 
-.hero {
-  background: url('./images/cover.jpg') no-repeat center center/cover;
-  height: 100vh;
-  color: white;
-  position: relative;
-  z-index: 1;
-}
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem 5%;
+  background: rgba(0, 0, 0, 0.9); /* Darker for better text legibility */
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
+  transition: 0.3s;
 }
 
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #fff;
+  color: #ffcc00;
 }
 
 .navbar nav {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .navbar nav a {
   color: white;
   text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
@@ -51,45 +49,62 @@ body, html {
   color: #ffcc00;
 }
 
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2;
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./images/cover.jpg') no-repeat center center/cover;
+  min-height: 100vh; /* Changed from height to min-height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding-top: 80px; /* Space for the fixed navbar */
 }
 
+.hero-content {
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+}
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: clamp(2rem, 5vw, 4rem); /* Fluid typography */
+  margin-bottom: 20px;
+  color: #ffcc00;
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom:30px;
+}
+
+.hero-content form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap; /* Allows search to wrap on tiny screens */
 }
 
 .hero-content form input[type="text"] {
-  padding: 10px;
-  width: 250px;
+  padding: 12px 20px;
+  width: 300px;
+  max-width: 100%;
   border: none;
   border-radius: 5px;
+  outline: none;
 }
 
 .hero-content form button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   border: none;
   background-color: #ffcc00;
+  font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s;
 }
 
 .hero-content form button:hover {
   background-color: #e6b800;
+  transform: scale(1.05);
 }
-
 /* Sections */
 .section {
   padding: 80px 20px;
@@ -126,14 +141,15 @@ body, html {
 /* 🔹 MOBILE RESPONSIVE STYLES */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 1rem;
+    flex-direction: row; /* Keep logo and nav side-by-side or use a burger menu */
   }
 
   .navbar nav {
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
+    gap: 10px;
   }
 
   .navbar nav a {
@@ -141,6 +157,7 @@ body, html {
     display: block;
     width: 100%;
     border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.8rem;
   }
 
   .hero-content h1 {
@@ -153,11 +170,21 @@ body, html {
 }
 
 @media (max-width: 580px) {
+
+  .navbar {
+    flex-direction: column; /* Stack logo and links for very narrow screens */
+    text-align: center;
+  }
+
+  .navbar nav {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .hero-content {
-    color: orange;
-    background-color: midnightblue;
-    font-size: 1.2rem;
-    padding: 10px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Adds contrast against busy backgrounds */
+    border-radius: 15px;
   }
 
   .hero {
