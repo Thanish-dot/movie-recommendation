@@ -207,11 +207,24 @@ body, html {
 
   .hero-content {
     font-size: 1rem;
-    padding: 15px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Adds contrast against busy backgrounds */
+    border-radius: 15px;
   }
 
   .hero-content form input[type="text"] {
     width: 180px;
+  }
+  
+  .navbar {
+    flex-direction: column; /* Stack logo and links for very narrow screens */
+    text-align: center;
+  }
+
+  .navbar nav {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
