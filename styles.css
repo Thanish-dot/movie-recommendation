@@ -140,6 +140,13 @@ body, html {
 
 /* 🔹 MOBILE RESPONSIVE STYLES */
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 101;
+  }
   .navbar {
     padding: 1rem;
     flex-direction: row; /* Keep logo and nav side-by-side or use a burger menu */
@@ -160,12 +167,38 @@ body, html {
     font-size: 0.8rem;
   }
 
+  .nav-links {
+    position: absolute;
+    top: 100%; /* Starts right below the navbar */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    gap: 0;
+    display: none; /* Hidden by default */
+    text-align: center;
+    border-top: 1px solid #444;
+  }
+  /* The "Magic" Part: Show menu when checkbox is checked */
+  #menu-toggler:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 20px;
+    width: 100%;
+    border-bottom: 1px solid #222;
+  }
+
   .hero-content h1 {
     font-size: 2.2rem;
   }
 
   .hero-content p {
     font-size: 1rem;
+  }
+  .hero-content {
+    margin-top: 20px; /* Prevent overlap with fixed nav */
   }
 }
 
@@ -198,6 +231,49 @@ body, html {
   .hero-content p {
     font-size: 0.9rem;
   }
+  /* --- Desktop Styles (Keep your existing desktop flex logic) --- */
+#menu-toggler, .hamburger {
+  display: none; /* Hide toggle on desktop */
+}
+
+/* --- MOBILE RESPONSIVE STYLES --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 101;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%; /* Starts right below the navbar */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    gap: 0;
+    display: none; /* Hidden by default */
+    text-align: center;
+    border-top: 1px solid #444;
+  }
+
+  .nav-links a {
+    padding: 20px;
+    width: 100%;
+    border-bottom: 1px solid #222;
+  }
+
+  /* The "Magic" Part: Show menu when checkbox is checked */
+  #menu-toggler:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .hero-content {
+    margin-top: 20px; /* Prevent overlap with fixed nav */
+  }
+}
 }
 
 @media (max-width: 480px) {
@@ -226,6 +302,49 @@ body, html {
     flex-wrap: wrap;
     justify-content: center;
   }
+  /* --- Desktop Styles (Keep your existing desktop flex logic) --- */
+#menu-toggler, .hamburger {
+  display: none; /* Hide toggle on desktop */
+}
+
+/* --- MOBILE RESPONSIVE STYLES --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 101;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%; /* Starts right below the navbar */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    gap: 0;
+    display: none; /* Hidden by default */
+    text-align: center;
+    border-top: 1px solid #444;
+  }
+
+  .nav-links a {
+    padding: 20px;
+    width: 100%;
+    border-bottom: 1px solid #222;
+  }
+
+  /* The "Magic" Part: Show menu when checkbox is checked */
+  #menu-toggler:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .hero-content {
+    margin-top: 20px; /* Prevent overlap with fixed nav */
+  }
+}
 }
 
 footer {
@@ -233,4 +352,7 @@ footer {
   color: white;
   text-align: center;
   padding: 15px 0;
+}
+#menu-toggler, .hamburger {
+  display: none; /* Hide toggle on desktop */
 }
