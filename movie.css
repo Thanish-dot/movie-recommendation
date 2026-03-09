@@ -22,13 +22,15 @@ header {
 
 header h1 {
   font-size: 1.8rem;
-  word-wrap: break-word; /* Prevents text overflow on small screens */
+  white-space: nowrap;   /* keeps text in one line */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* NAVBAR */
 nav {
   background: #222;
-  position: sticky;
+  position: sticky; /* fixed at top for desktop */
   top: 0;
   z-index: 1000;
 }
@@ -37,17 +39,15 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* allows wrapping in mobile */
+  flex-wrap: wrap;
   padding: 10px 20px;
 }
 
 .navbar {
   display: flex;
-  flex-wrap: wrap; /* ensures items wrap */
+  flex-wrap: wrap;
   gap: 15px;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar li {
@@ -83,22 +83,29 @@ details ul li {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .nav-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .navbar {
+    display: none; /* hidden by default */
     flex-direction: column;
     width: 100%;
-    gap: 10px;
+    background: #111;
+    position: absolute; /* covers page when opened */
+    top: 60px; /* below header */
+    left: 0;
+    padding: 20px;
   }
 
-  details ul {
-    width: 100%; /* dropdown fills width */
+  /* Use details/summary for toggle */
+  .menu-button {
+    display: block;
+    cursor: pointer;
+    color: #ffcc00;
+    font-size: 1.5rem;
+  }
+
+  details[open] .navbar {
+    display: flex; /* show when expanded */
   }
 }
-
 /* === MOVIE GRID === */
 .movie-container {
   display: flex;
