@@ -1,371 +1,173 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-body, html {
-  font-family: Arial, sans-serif;
-  scroll-behavior: smooth;
-  background-color: #1a1a1a;
+body{
+font-family:Arial;
+background:#1a1a1a;
+scroll-behavior:smooth;
 }
 
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 5%;
-  background: rgba(0, 0, 0, 0.9); /* Darker for better text legibility */
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  transition: 0.3s;
-}
-
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffcc00;
-}
-
-.navbar nav {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.navbar nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.navbar nav a:hover {
-  color: #ffcc00;
-}
-
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./images/cover.jpg') no-repeat center center/cover;
-  min-height: 100vh; /* Changed from height to min-height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  padding-top: 80px; /* Space for the fixed navbar */
-}
-
-.hero-content {
-  text-align: center;
-  width: 90%;
-  max-width: 800px;
-}
-.hero-content h1 {
-  font-size: clamp(2rem, 5vw, 4rem); /* Fluid typography */
-  margin-bottom: 20px;
-  color: #ffcc00;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom:30px;
-}
-
-.hero-content form {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap; /* Allows search to wrap on tiny screens */
-}
-
-.hero-content form input[type="text"] {
-  padding: 12px 20px;
-  width: 300px;
-  max-width: 100%;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-}
-
-.hero-content form button {
-  padding: 12px 25px;
-  border: none;
-  background-color: #ffcc00;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.hero-content form button:hover {
-  background-color: #e6b800;
-  transform: scale(1.05);
-}
-/* Sections */
-.section {
-  padding: 80px 20px;
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #ccc;
-}
-
-.section h2 {
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.section form input,
-.section form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 1px solid #999;
-}
-
-.section form button {
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-.section form button:hover {
-  background-color: #555;
-}
-
-/* 🔹 MOBILE RESPONSIVE STYLES */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    z-index: 101;
-  }
-  .navbar {
-    padding: 1rem;
-    flex-direction: row; /* Keep logo and nav side-by-side or use a burger menu */
-  }
-
-  .navbar nav {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-    gap: 10px;
-  }
-
-  .navbar nav a {
-    padding: 10px 0;
-    display: block;
-    width: 100%;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    font-size: 0.8rem;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%; /* Starts right below the navbar */
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    flex-direction: column;
-    gap: 0;
-    display: none; /* Hidden by default */
-    text-align: center;
-    border-top: 1px solid #444;
-  }
-  /* The "Magic" Part: Show menu when checkbox is checked */
-  #menu-toggler:checked ~ .nav-links {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 20px;
-    width: 100%;
-    border-bottom: 1px solid #222;
-  }
-
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-  .hero-content {
-    margin-top: 20px; /* Prevent overlap with fixed nav */
-  }
-}
-
-@media (max-width: 580px) {
-
-  .navbar {
-    flex-direction: column; /* Stack logo and links for very narrow screens */
-    text-align: center;
-  }
-
-  .navbar nav {
-    margin-top: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .hero-content {
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7); /* Adds contrast against busy backgrounds */
-    border-radius: 15px;
-  }
-
-  .hero {
-    background: url('./images/bg.jpg') no-repeat center center/cover;
-  }
-
-  .hero-content h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-content p {
-    font-size: 0.9rem;
-  }
-  /* --- Desktop Styles (Keep your existing desktop flex logic) --- */
-#menu-toggler, .hamburger {
-  display: none; /* Hide toggle on desktop */
-}
-
-/* --- MOBILE RESPONSIVE STYLES --- */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    z-index: 101;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%; /* Starts right below the navbar */
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    flex-direction: column;
-    gap: 0;
-    display: none; /* Hidden by default */
-    text-align: center;
-    border-top: 1px solid #444;
-  }
-
-  .nav-links a {
-    padding: 20px;
-    width: 100%;
-    border-bottom: 1px solid #222;
-  }
-
-  /* The "Magic" Part: Show menu when checkbox is checked */
-  #menu-toggler:checked ~ .nav-links {
-    display: flex;
-  }
-
-  .hero-content {
-    margin-top: 20px; /* Prevent overlap with fixed nav */
-  }
-}
-}
-
-@media (max-width: 480px) {
-  .hero {
-    background: url('./images/cover.jpg') no-repeat center center/cover;
-  }
-
-  .hero-content {
-    font-size: 1rem;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7); /* Adds contrast against busy backgrounds */
-    border-radius: 15px;
-  }
-
-  .hero-content form input[type="text"] {
-    width: 180px;
-  }
-  
-  .navbar {
-    flex-direction: column; /* Stack logo and links for very narrow screens */
-    text-align: center;
-  }
-
-  .navbar nav {
-    margin-top: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  /* --- Desktop Styles (Keep your existing desktop flex logic) --- */
-#menu-toggler, .hamburger {
-  display: none; /* Hide toggle on desktop */
-}
-
-/* ---------- MOBILE MENU ---------- */
-@media (max-width:768px){
+/* NAVBAR */
 
 .navbar{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
+position:fixed;
+top:0;
+width:100%;
+background:black;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 5%;
+z-index:1000;
 }
 
-/* hamburger icon */
-.hamburger{
-  display:block;
-  font-size:28px;
-  color:white;
-  cursor:pointer;
+.logo{
+color:#ffcc00;
+font-size:22px;
+font-weight:bold;
 }
 
-/* mobile menu hidden */
 .nav-links{
-  position:absolute;
-  top:70px;
-  left:0;
-  width:100%;
-  background:#000;
-  flex-direction:column;
-  display:none;
+display:flex;
+gap:20px;
 }
 
-/* menu items */
 .nav-links a{
-  padding:15px;
-  border-bottom:1px solid #333;
-  width:100%;
+color:white;
+text-decoration:none;
+font-size:14px;
 }
 
-/* when clicking hamburger */
-#menu-toggler:checked + .hamburger + .nav-links{
-  display:flex;
+.nav-links a:hover{
+color:#ffcc00;
 }
 
-
-  /* The "Magic" Part: Show menu when checkbox is checked */
-  #menu-toggler:checked ~ .nav-links {
-    display: flex;
-  }
-
-  .hero-content {
-    margin-top: 20px; /* Prevent overlap with fixed nav */
-  }
-}
+#menu-toggler{
+display:none;
 }
 
-footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
+.hamburger{
+display:none;
 }
-#menu-toggler, .hamburger {
-  display: none; /* Hide toggle on desktop */
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('./images/cover.jpg') center/cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding-top:80px;
+}
+
+.hero-content h1{
+font-size:50px;
+color:#ffcc00;
+margin-bottom:15px;
+}
+
+.hero-content p{
+margin-bottom:25px;
+}
+
+.hero-content input{
+padding:12px;
+width:250px;
+border:none;
+border-radius:5px;
+}
+
+.hero-content button{
+padding:12px 25px;
+background:#ffcc00;
+border:none;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* SECTIONS */
+
+.section{
+padding:80px 20px;
+background:#f4f4f4;
+border-bottom:1px solid #ccc;
+}
+
+.section h2{
+margin-bottom:15px;
+}
+
+.section input,
+.section textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:5px;
+border:1px solid #999;
+}
+
+.section button{
+margin-top:10px;
+padding:10px 20px;
+background:#333;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+/* FOOTER */
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hamburger{
+display:block;
+font-size:28px;
+color:white;
+cursor:pointer;
+}
+
+.nav-links{
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:black;
+flex-direction:column;
+display:none;
+text-align:center;
+}
+
+.nav-links a{
+padding:15px;
+border-bottom:1px solid #333;
+}
+
+#menu-toggler:checked ~ .nav-links{
+display:flex;
+}
+
+.hero-content h1{
+font-size:30px;
+}
+
+.hero-content input{
+width:180px;
+}
+
 }
