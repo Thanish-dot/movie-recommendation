@@ -83,15 +83,15 @@ details ul li {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .navbar {
-    display: none; /* hidden by default */
+.navbar {
     flex-direction: column;
     width: 100%;
     background: #111;
-    position: absolute; /* covers page when opened */
-    top: 60px; /* below header */
-    left: 0;
     padding: 20px;
+  }
+  details[open] .mega-menu {
+    display: grid; /* expands when tapped */
+    width: 100%;
   }
 
   /* Use details/summary for toggle */
@@ -139,3 +139,46 @@ details ul li {
   padding: 10px;
   color: #333;
 }
+
+/* Mega Menu Base */
+.mega-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  background: #333;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.mega-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  transition: 0.3s;
+}
+
+.mega-menu a:hover {
+  color: #ffcc00;
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+  .navbar {
+    display: flex;
+    gap: 20px;
+  }
+
+  details:hover .mega-menu {
+    display: grid; /* show mega menu on hover */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 600px; /* wide dropdown */
+    z-index: 999;
+  }
+
+  details .mega-menu {
+    display: none; /* hidden until hover */
+  }
+}
+
